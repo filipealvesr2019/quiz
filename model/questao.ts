@@ -1,4 +1,4 @@
-import RespostaModel from "./respoasta"
+import RespostaModel from "./resposta"
 
 export default class QuestaoModel{
     #id: number
