@@ -34,7 +34,9 @@ export default class QuestaoModel{
         return false
     }
 
-
+    responderCom(indice: number): QuestaoModel{
+        
+    }
     embaralharRresposta(): QuestaoModel{
         let respostasEmbaralhadas = embaralhar(this.#respostas)
         return new QuestaoModel(this.#id, this.#enunciado, respostasEmbaralhadas, this.#acertou)
