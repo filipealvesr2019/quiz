@@ -5,7 +5,7 @@ export default (req, res) => {
     (questao) => questao.id === idSelecionado
   );
   if (selecionada.length === 1) {
-    const quetoesSelecionada = selecionada[0];
+    const quetoesSelecionada = selecionada[0].embaralharRresposta();
     res.status(200).json(quetoesSelecionada.paraObjeto());
   } else {
     res.status(204).send();
