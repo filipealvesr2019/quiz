@@ -12,10 +12,11 @@ export default function Questao(props: QuestaoProps) {
     return questao.respostas.map((resposta, index) => {
       return (
         <Resposta
+        key={index}
           valor={resposta}
           indice={index}
           letra="A"
-          corLetra="#f2c866"
+          corFundoLetra="#f2c866"
         />
       );
     });
