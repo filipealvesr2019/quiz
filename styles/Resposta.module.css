@@ -1,10 +1,21 @@
 .resposta{
     display: flex;
+    height: 100px;
+    margin: 10px;
+    width: 80%;
+    min-width: 500px;
 }
 
-
+.conteudoResposta{
+    position: relative;
+    display: flex;
+    flex: 1;
+}
 .frente, .verso{
     display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 .frente{
     align-items: center;
