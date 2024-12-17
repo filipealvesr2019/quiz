@@ -10,6 +10,9 @@ export default function Home() {
     RespostaModel.errada('Azul'),
     RespostaModel.certa('Preta'),
   ])
+  function  respostaFornecida (indice: number){
+    console.log(indice)
+  }
   return (
     <div style={{
       display:"flex",
@@ -18,7 +21,7 @@ export default function Home() {
       height:"100vh"
     }}>
 
-      <Questao valor={questaoTeste} />
+      <Questao valor={questaoTeste} respostaFornecida={respostaFornecida}/>
 
     </div>
       
