@@ -17,8 +17,10 @@ export default function Home() {
     setQuestao(questao.responderCom(indice));
   }
   function tempoEsgotado() {
+    if(questao.naoRespondida){
+      setQuestao(questao.responderCom(-1));
 
-    setQuestao(questao.responderCom(-1));
+    }
   }
   return (
     <div
