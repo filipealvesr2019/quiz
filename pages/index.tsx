@@ -34,7 +34,7 @@ export default function Home() {
       }}
     >
       <Questao tempoPraResposta={5} valor={questao} respostaFornecida={respostaFornecida} tempoEsgotado={tempoEsgotado}/>
-      <Botao texto="teste do butão" />
+      <Botao texto="Proxima" href="/resultado" />
       </div>
   );
 }
