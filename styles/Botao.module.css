@@ -6,11 +6,23 @@
     font-size: 1.2rem;
     border: none;
     padding: 10px 25px;
-    margin-top: 40px;
+    margin-top: 3rem;
     cursor: pointer;
     transition: all .2s ease-in-out;
+    margin-bottom: 2rem;
+
+   
 }
 
 .botao:hover{
     transform: scale(1.1);
 }
+
+
+@media screen and (min-width: 700px) {
+    .botao{
+        margin-top: -3rem;
+        margin-bottom: 2rem;
+
+    }
+  }

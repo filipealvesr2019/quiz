@@ -14,8 +14,9 @@
 .frente, .verso{
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 70%;
     position: absolute;
+    margin: 5rem;
 }
 .frente{
     align-items: center;
@@ -60,3 +61,13 @@
     font-weight: 700;
 
 }
+
+@media screen and (min-width: 700px) {
+    .frente, .verso{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        margin: 0rem;
+    }
+  }
