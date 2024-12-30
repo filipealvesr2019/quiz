@@ -3,6 +3,7 @@ import Questao from "../components/Questao";
 import QuestaoModel from "../model/questao";
 import RespostaModel from "../model/resposta";
 import Botao from "../components/Botao";
+import styles from '../styles/Index.module.css'
 
 const questaoMock = new QuestaoModel(1, "Melhor cor", [
   RespostaModel.errada("Verde"),
@@ -25,13 +26,8 @@ export default function Home() {
   }
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection:"column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
+ 
+      className={styles.container}
     >
       <Questao tempoPraResposta={5} valor={questao} respostaFornecida={respostaFornecida} tempoEsgotado={tempoEsgotado}/>
       <Botao texto="Proxima" href="/resultado" />
