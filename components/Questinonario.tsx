@@ -9,7 +9,11 @@ interface QuestinonarioProps {
   inPraProximoPasso: () => void;
 }
 export default function Questinonario(props: QuestinonarioProps) {
-  function respostaFornecida(indece: number) {}
+  function respostaFornecida(indice: number) {
+    if(props.questao.naoRespondida){
+      props.questaoRespondida(props.questao.responderCom(indice))
+    }
+  }
   return (
     <div className={styles.questionario}>
       {props.questao ? (
