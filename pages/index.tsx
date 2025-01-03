@@ -37,7 +37,7 @@ export default function Home() {
  
       className={styles.container}
     >
-      <Questinonario  questao={questao} ultima={true} questaoRespondida={questaoRespondida} inPraProximoPasso={inPraProximoPasso}/>
+      <Questinonario  questao={questao} ultima={false} questaoRespondida={questaoRespondida} inPraProximoPasso={inPraProximoPasso}/>
       {/* <Questao tempoPraResposta={5} valor={questao} respostaFornecida={respostaFornecida} tempoEsgotado={tempoEsgotado}/>
       <Botao texto="Proxima" href="/resultado" /> */}
       </div>
