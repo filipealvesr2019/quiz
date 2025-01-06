@@ -13,18 +13,17 @@ const questaoMock = new QuestaoModel(1, "Melhor cor", [
   RespostaModel.certa("Preta"),
 ]);
 
-export default function Home() {
-  const [questao, setQuestao] = useState(questaoMock);
-  // function respostaFornecida(indice: number) {
-  //   console.log(indice);
-  //   setQuestao(questao.responderCom(indice));
-  // }
-  // function tempoEsgotado() {
-  //   if(questao.naoRespondida){
-  //     setQuestao(questao.responderCom(-1));
 
-  //   }
-  // }
+const BASE_URL = 'http://localhost:3001/api'
+export default function Home() {
+  const [idsDasQuestoes, setIdsDasQuestoes] = useState<number[]>([])
+  const [questao, setQuestao] = useState(questaoMock);
+
+  async function carregarIdsDasQuestoes(){
+    const resposta = await fetch(`${BASE_URL}/questionario`);
+    const idsDasQuestoes = await resposta.json();
+    setIdsDasQuestoes(idsDasQuestoes)
+  }
   function questaoRespondida(questao:QuestaoModel){
 
   }
@@ -33,13 +32,8 @@ export default function Home() {
 
   }
   return (
-    <div
  
-      className={styles.container}
-    >
       <Questinonario  questao={questao} ultima={false} questaoRespondida={questaoRespondida} inPraProximoPasso={inPraProximoPasso}/>
-      {/* <Questao tempoPraResposta={5} valor={questao} respostaFornecida={respostaFornecida} tempoEsgotado={tempoEsgotado}/>
-      <Botao texto="Proxima" href="/resultado" /> */}
-      </div>
+  
   );
 }
