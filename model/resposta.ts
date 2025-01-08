@@ -27,6 +27,10 @@ export default class RespostaModel {
   revelar(){
     return new RespostaModel(this.#valor, this.#certa, true)
   }
+
+  static criarUsandoObjeto(abj): RespostaModel{
+    return new RespostaModel(abj.texto, abj.certa, abj.revelada)
+  }
   paraObjeto() {
     return {
       valor: this.#valor,

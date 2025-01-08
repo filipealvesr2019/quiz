@@ -17,7 +17,7 @@ const questaoMock = new QuestaoModel(1, "Melhor cor", [
 const BASE_URL = 'http://localhost:3000/api'
 export default function Home() {
   const [idsDasQuestoes, setIdsDasQuestoes] = useState<number[]>([])
-  const [questao, setQuestao] = useState(questaoMock);
+  const [questao, setQuestao] = useState<QuestaoModel>(questaoMock);
 
   async function carregarIdsDasQuestoes(){
     const resposta = await fetch(`${BASE_URL}/questionario`);
@@ -30,7 +30,7 @@ export default function Home() {
   async function carregarQuestao(idQuestao: number){
     const resposta = await fetch(`${BASE_URL}/questoes/${idQuestao}`);
     const json = await resposta.json();
-    console.log(json)
+    console.log(json.respostas)
   }
 
   useEffect(() =>{
