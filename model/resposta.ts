@@ -28,8 +28,8 @@ export default class RespostaModel {
     return new RespostaModel(this.#valor, this.#certa, true)
   }
 
-  static criarUsandoObjeto(abj): RespostaModel{
-    return new RespostaModel(abj.texto, abj.certa, abj.revelada)
+  static criarUsandoObjeto(obj: RespostaModel): RespostaModel{
+    return new RespostaModel(obj.valor, obj.certa, obj.revelada)
   }
   paraObjeto() {
     return {
