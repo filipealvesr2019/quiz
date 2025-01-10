@@ -18,6 +18,7 @@ const BASE_URL = 'http://localhost:3000/api'
 export default function Home() {
   const [idsDasQuestoes, setIdsDasQuestoes] = useState<number[]>([])
   const [questao, setQuestao] = useState<QuestaoModel>(questaoMock);
+  const [respostaCertas, setRespostaCertas] = useState<number>(0);
 
   async function carregarIdsDasQuestoes(){
     const resposta = await fetch(`${BASE_URL}/questionario`);
@@ -41,8 +42,10 @@ export default function Home() {
   useEffect(() =>{
     idsDasQuestoes.length > 0 && carregarQuestao(idsDasQuestoes[0])
   }, [idsDasQuestoes])
-  function questaoRespondida(questao:QuestaoModel){
-
+  function questaoRespondida(questaoRespondida:QuestaoModel){
+    setQuestao(questaoRespondida);
+    const acertou = questaoRespondida.acertou
+    setRespostaCertas(respostaCertas + (acertou ? 1 : 0))
   }
 
   function inPraProximoPasso(){
