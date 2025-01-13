@@ -48,8 +48,25 @@ export default function Home() {
     setRespostaCertas(respostaCertas + (acertou ? 1 : 0))
   }
 
+  function idProximaPergunta(){
+   const proximoIndice = idsDasQuestoes.indexOf(questao.id) + 1;
+   return idsDasQuestoes[proximoIndice]
+  }
+  
   function inPraProximoPasso(){
+    const proximoId = idProximaPergunta()
 
+    proximoId ? irPraProximaQuestao(proximoId) : finalizar(); 
+  }
+
+
+  function irPraProximaQuestao(proximoId: number){
+    carregarQuestao(proximoId)
+  }
+
+  
+  function finalizar(){
+    
   }
   return (
  
