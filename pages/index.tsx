@@ -4,11 +4,9 @@ import QuestaoModel from "../model/questao";
 import Questinonario from "../components/Questinonario";
 import { useRouter } from "next/router";
 
-
-
 const BASE_URL = "http://localhost:3000/api";
 export default function Home() {
-  const router = useRouter()
+  const router = useRouter();
   const [idsDasQuestoes, setIdsDasQuestoes] = useState<number[]>([]);
   const [questao, setQuestao] = useState<QuestaoModel>();
   const [respostaCertas, setRespostaCertas] = useState<number>(0);
@@ -40,10 +38,8 @@ export default function Home() {
   }
 
   function idProximaPergunta() {
-      const proximoIndice = idsDasQuestoes.indexOf(questao.id) + 1;
-      return idsDasQuestoes[proximoIndice];
-      
-  
+    const proximoIndice = idsDasQuestoes.indexOf(questao.id) + 1;
+    return idsDasQuestoes[proximoIndice];
   }
 
   function inPraProximoPasso() {
@@ -61,22 +57,18 @@ export default function Home() {
       pathname: "/resultado",
       query: {
         total: idsDasQuestoes.length,
-        certas: respostaCertas
-      }
-    })
+        certas: respostaCertas,
+      },
+    });
   }
   return questao ? (
     <Questinonario
-    questao={questao}
-    ultima={idProximaPergunta() === undefined}
-    questaoRespondida={questaoRespondida}
-    inPraProximoPasso={inPraProximoPasso}
-  /> ): false
+      questao={questao}
+      ultima={idProximaPergunta() === undefined}
+      questaoRespondida={questaoRespondida}
+      inPraProximoPasso={inPraProximoPasso}
+    />
+  ) : (
+    false
+  );
 }
-
-
-
-    
-
-
- 
