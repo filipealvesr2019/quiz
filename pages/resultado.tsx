@@ -12,9 +12,15 @@ export default function Resultado(){
     return (
         <div className={styles.resultado}>
         <h1>Resultado Final</h1>
+
+        <div style={{
+            display:"flex"
+        }}>
         <Estatistica  texto="Perguntas" valor={total} />
         <Estatistica  texto="Certas" valor={certas} />
-        <Estatistica  texto="Percentual" valor={`${percentual}`} />
+        <Estatistica  texto="Percentual" valor={`${percentual}%`} />
+
+        </div>
 
         </div>
     )
