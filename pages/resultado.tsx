@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import styles from "../styles/Resultado.module.css"
 import Estatistica from "../components/Estatistica";
+import Botao from "../components/Botao";
 
 export default function Resultado(){
     const router = useRouter();
@@ -21,7 +22,12 @@ export default function Resultado(){
         <Estatistica  texto="Percentual" valor={`${percentual}%`} corFundo="#de6a33"/>
 
         </div>
+        <div style={{
+            marginTop:"3rem"
+        }}>
+        <Botao  href="/" texto="Tentar Novamente"/>
 
+        </div>
         </div>
     )
 }
