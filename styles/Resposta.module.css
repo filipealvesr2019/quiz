@@ -11,12 +11,18 @@
     display: flex;
     flex: 1;
 }
+
+.respostaRevelada.conteudoResposta{
+    transform: rotateY(180deg);
+}
 .frente, .verso{
     display: flex;
     height: 100%;
     width: 70%;
     position: absolute;
     margin: 5rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .frente{
     align-items: center;
