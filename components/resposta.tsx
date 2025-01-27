@@ -17,7 +17,7 @@ export default function Resposta(props: RespostaProps) {
         className={styles.resposta}
         onClick={() => props.respostaFornecida(props.indice)}
       >
-        <div className={`${respostaRevelada}${styles.conteudoResposta}`}>
+        <div className={`${respostaRevelada} ${styles.conteudoResposta}`}>
             <div className={styles.frente}>
               <div
                 className={styles.letra}
