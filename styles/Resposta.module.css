@@ -1,14 +1,17 @@
 .resposta{
     display: flex;
+    
     height: 100px;
     margin: 10px;
     width: 80%;
     min-width: 500px;
+    perspective: 1000px;
 }
 
 .conteudoResposta{
     position: relative;
     display: flex;
+    justify-content: center;
     flex: 1;
     transform-style: preserve-3d;
 }
@@ -24,11 +27,12 @@
 .frente, .verso{
     display: flex;
     height: 100%;
-    width: 70%;
+    width: 100%;
     position: absolute;
     margin: 5rem;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    
 }
 .frente{
     align-items: center;
